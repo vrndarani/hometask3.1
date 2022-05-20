@@ -82,6 +82,7 @@ public class Main {
     public static void task5 () {
         int monthNumber = 3;
 
+
         switch (monthNumber) {
             case 12:
             case 1:
