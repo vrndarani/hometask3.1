@@ -6,6 +6,12 @@ public class Main {
         task4();
         task5();
     }
+
+
+
+
+
+
 //task1
 
     public static void task1() {
@@ -13,7 +19,7 @@ public class Main {
         int clientOS = 0;
         if (clientOS == 0) {
             System.out.println("Install app for iOS");
-        } else if (clientOS == 1) {
+        } else {
             System.out.println("Install app for Android");
         }
     }
@@ -21,63 +27,53 @@ public class Main {
     //task2
     public static void task2() {
         int clientOS = 1;
-        int phoneYear = 2013;
-        if (clientOS == 0 && phoneYear > 2015) {
-            System.out.println("Install app for iOS");
-        }
-        if (clientOS == 0 && phoneYear < 2015) {
-            System.out.println("Install light iOS version of the app via this link");
-        } else if (clientOS == 1 && phoneYear > 2015) {
-            System.out.println("Install app for Android");
-        } else if (clientOS == 1 && phoneYear < 2015) {
-            System.out.println("Install light Android version of the app via this link");
+        int phoneYear = 2021;
+
+        if (clientOS == 0) {
+            if (phoneYear < 2015) {
+                System.out.println("Install light iOS version of the app via this link");
+            } else {
+                    System.out.println("Install app for iOS");
+            }
+        } else {
+                if (phoneYear < 2015) {
+                    System.out.println("Install light iOS version of the app via this link");
+                } else {
+                    System.out.println("Install app for Android");
+                }
+            }
 
 
-        }
 
+            }
 
-    }
+    private static void task3() {
+        int year = 2021;
 
-    //task3
-    public static void task3() {
-        int year = 2024;
-        int by4 = year % 4;
-        int by100 = year % 100;
-        int by400 = year % 400;
-
-        if (by4 == 0 && by100 != 0) {
-            System.out.println(year + " is a leap year");
-        } else if (by400 == 0) {
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println(year + " is a leap year");
         } else {
             System.out.println(year + " is not a leap year");
         }
 
-
     }
 
-//task4
-
-    public static void task4() {
+    private static void task4() {
 
         int deliveryDistance = 15;
-        int days = 0;
-        if (deliveryDistance < 20) {
-            days = days + 1;
-            System.out.println("Delivery in " + days + " day.");
+        int deliveryDays = 1;
+
+        if (deliveryDistance > 20) {
+            deliveryDays++;
         }
 
-        if (deliveryDistance > 20 && deliveryDistance < 60) {
-            System.out.println("Delivery in 2 days");
-        }
-        if (deliveryDistance > 60 && deliveryDistance < 100) {
-            System.out.println("Delivery is in 3 days");
-        } else if (deliveryDistance > 100) {
-            System.out.println("Delivery is in 4 days");
+        if (deliveryDistance > 60) {
+            deliveryDays++;
         }
 
-
+        System.out.println("Delivery is in " + deliveryDays + " days");
     }
+
     //task5
     public static void task5 () {
         int monthNumber = 3;
@@ -105,7 +101,7 @@ public class Main {
                 System.out.println("This is an autumn month");
                 break;
             default:
-                System.out.println("Month number is invalid");
+                System.out.println("Incorrect month number: " + monthNumber);
         }
     }
 }
